@@ -3,8 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./styles.module.scss";
 import Logo from "../../assets/images/logo.png";
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
+import Sidebar from "../sidebar/index";
 
 const Login = () => {
+  const router = useRouter();
   const [inputs, setInputs] = useState({
     username: "",
     password: "",
@@ -27,6 +30,7 @@ const Login = () => {
     setSubmitted(true);
 
     if (username && password) {
+      router.push('/sidebar')
       //dispatch action
     //   dispatch(login(username, password));
     }
@@ -45,7 +49,7 @@ const Login = () => {
               Hey, Enter your details to get sign in to your account
             </span>
           </div>
-          <form className={styles.signinForm}>
+          <form className={styles.signinForm} onSubmit={handleSubmit}>
             <label className={styles.formLabel}>EMAIL ADDRESS</label>
             <input
               type="email"
