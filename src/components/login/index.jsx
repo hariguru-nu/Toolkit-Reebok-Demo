@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./styles.module.scss";
-import Logo from "../../assets/images/logo.png";
+import Logo from "@Assets/images/logo.png";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
-import Sidebar from "../sidebar/index";
+import Sidebar from "@Components/sidebar/index";
 
 const Login = () => {
   const router = useRouter();

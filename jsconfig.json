@@ -1,7 +1,18 @@
 {
   "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "module": "esnext",
+    "baseUrl": "./src",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@Components/*": ["components/*"],
+      "@Assets/*": ["assets/*"],
+      "@Pages/*": ["pages"]
     }
-  }
+  },
+  "include": ["**/*.js", "**/*.jsx", ".prettierrc.js"],
+  "exclude": ["node_modules"]
+
 }

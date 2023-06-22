@@ -13,7 +13,7 @@ import {
   BsChatSquareText,
 } from "react-icons/bs";
 import { IoSettingsOutline, IoChevronBackOutline } from "react-icons/io5";
-import ReebokLogo from "../../assets/images/reebok-logo.png";
+import ReebokLogo from "@Assets/images/reebok-logo.png";
 import Image from "next/image";
 
 const IconContainer = ({ children, isActive }) => {

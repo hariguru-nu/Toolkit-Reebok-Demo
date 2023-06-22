@@ -1,5 +1,5 @@
 import React from "react";
-import WelcomePage from "../components/dashboard/index.jsx";
+import WelcomePage from "@Components/dashboard/index";
 
 const HomePage = () => {
   return (
