@@ -1,6 +1,6 @@
-import React from "react";
-import SidebarContainer from "../components/sidebar/index";
+// import React from "react";
+// import SidebarContainer from "../components/sidebar/index";
 
-const Sidebar = () => <SidebarContainer />;
+// const Sidebar = () => <SidebarContainer />;
 
-export default Sidebar;
+// export default Sidebar;

@@ -1,0 +1,19 @@
+.pageContainer {
+    bottom: 0;
+    display: flex;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.contentPageContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 920px;
+    position: relative;
+    background-color: #eee;
+    overflow-y: auto;
+}
