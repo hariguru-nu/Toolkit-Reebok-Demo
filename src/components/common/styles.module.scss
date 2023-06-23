@@ -1,0 +1,29 @@
+.Table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+
+.TableGroupHead {
+  background-color: #808B96;
+}
+
+.TableHead,
+.TableCell {
+  text-align: left; 
+  border-bottom: 1px solid #ddd;  
+  padding: 20px;
+}
+
+.TableHead {
+  font-weight: bold;
+  background-color: #D5D8DC;
+}
+
+.TableRow:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.TableRow:hover {
+  background-color: #f1f1f1;
+}

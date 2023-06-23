@@ -4,7 +4,6 @@ import styles from "./styles.module.scss";
 import Logo from "../../assets/images/logo.png";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
-import Sidebar from "../sidebar/index";
 
 const Login = () => {
   const router = useRouter();
@@ -30,7 +29,7 @@ const Login = () => {
     setSubmitted(true);
 
     if (username && password) {
-      router.push('/sidebar')
+      router.push('/layout')
       //dispatch action
     //   dispatch(login(username, password));
     }

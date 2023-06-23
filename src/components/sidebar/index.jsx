@@ -11,6 +11,7 @@ import {
   BsCheck2,
   BsCardList,
   BsChatSquareText,
+  BsList
 } from "react-icons/bs";
 import { IoSettingsOutline, IoChevronBackOutline } from "react-icons/io5";
 import ReebokLogo from "../../assets/images/reebok-logo.png";
@@ -217,14 +218,14 @@ function App() {
     <AppContainer>
       <SideBarContainer isShrink={isShrinkView}>
         <SideBarButton onClick={handleSidebarView} isShrink={isShrinkView}>
-          <IoChevronBackOutline />
+          <BsList />
         </SideBarButton>
         <LogoWrapper>
           <Logo>
             <Image src={ReebokLogo} alt="logo" className="rbk-logo" />
           </Logo>
           <LogoText isShrink={isShrinkView}>
-            <span>REEBOK</span>TOOLKIT
+            <span>REEBOK</span>
           </LogoText>
         </LogoWrapper>
         <SideTabWrapper>
@@ -256,33 +257,33 @@ function App() {
 export default App;
 
 const AppContainer = styled.div`
-  width: 100%;
+  // width: 100%;
   height: 100vh;
   display: flex;
   align-items: flex-start;
-  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  // background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 `;
 
 const SideBarContainer = styled.div`
   position: relative;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: #3F3E3E;
   box-sizing: border-box;
   padding: 15px;
   font-family: "DM Sans", sans-serif;
   display: flex;
   flex-direction: column;
   transition: all 0.4s ease;
-  width: ${({ isShrink }) => (isShrink ? "75px" : "280px")};
-  border-radius: ${({ isShrink }) => (isShrink ? "4px" : "8px")};
+  width: ${({ isShrink }) => (isShrink ? "75px" : "250px")};
+  // border-radius: ${({ isShrink }) => (isShrink ? "4px" : "8px")};
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 
 const SideBarButton = styled.button`
   cursor: pointer;
   background-color: #fff;
-  border-radius: 50%;
-  width: 20px;
+  border-radius: 20%;
+  width: 30px;
   aspect-ratio: 1;
   display: grid;
   place-content: center;
@@ -290,11 +291,16 @@ const SideBarButton = styled.button`
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   position: absolute;
   top: 4vh;
-  right: -10px;
+  right: 17px;
   transition: all 0.3s ease;
 
   transform: ${({ isShrink }) =>
     isShrink ? "rotate(180deg)" : "rotate(0deg)"};
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
 
   :hover {
     box-shadow: rgba(99, 99, 99, 0.5) 0px 2px 8px 0px;
@@ -331,7 +337,7 @@ const LogoText = styled.div`
   opacity: ${({ isShrink }) => (isShrink ? "0" : "1")};
 
   transition: all 0.3s ease;
-  color: #000;
+  color: #fff;
   span {
     font-weight: 600;
     margin-right: 10px;
@@ -365,14 +371,14 @@ const TabWrapper = styled.div`
   margin: 5px 0;
 
   background-color: ${({ isActive }) => (isActive ? "#EFEFEF" : "transparent")};
-  color: ${({ isActive }) => (isActive ? "#000" : "#8b8d91")};
+  color: ${({ isActive }) => (isActive ? "#000" : "#fff")};
   transition: all 0.3s ease;
 
-  :hover {
-    transition: all 0.3s ease;
-    background-color: #0f313e;
-    color: #fff;
-  }
+  // :hover {
+  //   transition: all 0.3s ease;
+  //   background-color: #0f313e;
+  //   color: #fff;
+  // }
 `;
 
 const IconWrap = styled.div`
@@ -382,7 +388,7 @@ const IconWrap = styled.div`
 
   svg {
     transition: all 0.3s ease;
-    color: ${({ isActive }) => (isActive ? "#000" : "#8b8d91")};
+    color: ${({ isActive }) => (isActive ? "#000" : "#fff")};
   }
 `;
 

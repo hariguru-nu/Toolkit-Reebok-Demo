@@ -13,7 +13,7 @@ const HomePage = () => {
           <div className={styles.boxGrid}></div>
           <div className={styles.boxItems}>
             <button className={styles.leftContent}>
-              <Link href="/login">
+              <Link href="https://toolkit-qa.eddiebauer.com">
                 <Image src={EbLogo} alt="eb-logo" className={styles.ebLogo} />
               </Link>
             </button>
