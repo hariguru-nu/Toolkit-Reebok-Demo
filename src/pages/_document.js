@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 export default function Document() {
   return (
