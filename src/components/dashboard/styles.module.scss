@@ -1,66 +1,66 @@
 .app {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  background-image: url("https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg");
-  background-repeat: no-repeat;
-  background-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://images.pexels.com/photos/1054220/pexels-photo-1054220.jpeg");
+  background-size:cover; 
+  background-repeat: no-repeat;  
+  z-index: 0;
 }
 .container {
+  width: 600px;
+  height: 445px;
+  z-index: 1;
+}
+.sparcContainer {
+  z-index: 1;
+  width: 600px;
+  height: 300px;
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
-  padding-top: 50px;
-//   width: 100vw;
-//   height: 100vh;
-}
-.modelContainer {
-  width: 500px;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-}
-.boxGrid {
-  background-image: url("https://i.pinimg.com/736x/b8/09/22/b80922f6ea2daaf36a6627378662803b--deck-of-cards-phone-wallpapers.jpg");
-  background-size: 500px 400px;
-  background-repeat: no-repeat;
-  /* background-color: white; */
-  width: 500px;
-  height: 400px;
-  border-radius: 0px 0px 0px 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
-  /* margin: 100px auto; */
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.5);
 }
-.boxItems {
+.sparcImg {
+  width: 570px;
+  height: 164px;
+  flex-shrink: 0;
+  background: url('https://images.squarespace-cdn.com/content/v1/5fb69cf07a80c250e62f6400/1617126682263-OPOT5FY9R2C4B7WRU1AR/Header+-+12pt%402x.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.btnGroup {
+  z-index: 1;
   display: flex;
-  height: 100px;
   flex-direction: row;
   justify-content: space-between;
-  width: 500px;
 }
-.leftContent {
+.btnLink {
+  width: 290px;
+  height: 130px;
+  flex-shrink: 0;
   display: flex;
-  width: 250px;
-  background-color: #fff;
-  border-right: 1px solid #a1a074;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.5);
+}
+.eblogo {
+  width: 200px;
+  height: 47.059px;
+  flex-shrink: 0;
+}
+.rbklogo {
+  width: 200px;
+  height: 43.946px;
+  flex-shrink: 0;
+}
+
+.btnGroup {
   cursor: pointer;
-}
-.ebLogo {
-  width: 210px;
-  height: 60px;
-  display: flex;
-  margin: 20px;
-}
-.rightContent {
-  display: flex;
-  width: 250px;
-  background-color: #fff;
-  cursor: pointer;
-}
-.rbkLogo {
-  width: 190px;
-  height: 50px;
-  display: flex;
-  margin: 25px;
 }
