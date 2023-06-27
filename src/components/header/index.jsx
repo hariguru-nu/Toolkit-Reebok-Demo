@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BsPatchExclamation,
   BsTag,
-  BsReceipt
+  BsFillPersonLinesFill
 } from "react-icons/bs";
 import styles from './styles.module.scss';
 
@@ -12,7 +12,7 @@ const Header = () => {
       <div>
         <BsPatchExclamation className={styles.headerIcons}/>
         <BsTag className={styles.headerIcons}/>
-        <BsReceipt className={styles.headerIcons}/>
+        <BsFillPersonLinesFill className={styles.headerIcons}/>
       </div>
     </div>
   )

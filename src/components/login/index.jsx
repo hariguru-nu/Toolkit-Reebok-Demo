@@ -29,7 +29,7 @@ const Login = () => {
     setSubmitted(true);
 
     if (username && password) {
-      router.push('/layout')
+      router.push('/userlist')
       //dispatch action
     //   dispatch(login(username, password));
     }

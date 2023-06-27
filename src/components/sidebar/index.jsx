@@ -1,129 +1,148 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import Icon from "../../assets/images/Icon.svg";
 import Dashboard from "../../assets/images/dashboard.svg";
 import Transactions from "../../assets/images/transactions.svg";
 import Performance from "../../assets/images/performance.svg";
 import News from "../../assets/images/news.svg";
 import Settings from "../../assets/images/settings.svg";
+import ReebokIcon from "../../assets/images/reebok-logo.png"
 import Support from "../../assets/images/support.svg";
-import "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 const Sidebar = () => {
-  // const location = useLocation();
-
   const { asPath }  = useRouter();
   console.log(asPath);
 
   const [closeMenu, setCloseMenu] = useState(false);
+  const [activeTab, setActiveTab] = useState();
 
   const handleCloseMenu = () => {
     setCloseMenu(!closeMenu);
   };
 
+  const handleActiveTab = (id) => {
+    console.log(id, "id");
+    setActiveTab(id);
+  }
+
   const menuLinks = [
     {
       imageSrc: Dashboard,
-      menuText: "dashboard",
-      pathname: "/",
+      menuText: "Database",
+      pathname: "/database",
     },
     {
       imageSrc: Transactions,
-      menuText: "transactions",
+      menuText: "Transactions",
       pathname: "/transactions",
     },
     {
-      imageSrc: Performance,
-      menuText: "performance",
-      pathname: "/performance",
+      imageSrc: News,
+      menuText: "Report",
+      pathname: "/report",
+      subMenu: [
+        {
+          menuText: "US Report",
+          pathname: "/report/report-us",
+        },
+        {
+          menuText: "CA Report",
+          pathname: "/report/report-ca",
+        },
+        {
+          menuText: "OUTLET Report",
+          pathname: "/report/report-outlet",
+        }
+      ]
     },
     {
       imageSrc: Settings,
-      menuText: "settings",
-      pathname: "/settings",
+      menuText: "Orders",
+      pathname: "/orders",
+      subMenu: [
+        {
+          menuText: "Order details",
+          pathname: "/orders/order-detail",
+        },
+        {
+          menuText: "Order Demand",
+          pathname: "/orders/order-demand",
+        },
+      ]
     },
     {
       imageSrc: Support,
-      menuText: "support",
-      pathname: "/support",
+      menuText: "AWS",
+      pathname: "/aws",
+      subMenu: [
+        {
+          menuText: "Lambda Actions",
+          pathname: "/aws/lambda",
+        },
+        {
+          menuText: "API",
+          pathname: "/aws/api-action",
+        }
+        
+      ]
     },
     {
-      imageSrc: News,
-      menuText: "news",
-      pathname: "/news",
+      imageSrc: Performance,
+      menuText: "Performance",
+      pathname: "/performance",
     },
+    
+    
   ];
 
   return (
-      <div className={closeMenu === false ? "sidebar" : "sidebar active"}>
+      <div className={`${styles.sidebar} ${closeMenu === false ? styles.sidebar : styles.active}`}>
         <div
-          className={
-            closeMenu === false ? "logoContainer" : "logoContainer active"
-          }
+          className={`${styles.logoContainer} ${ closeMenu === false ? styles.logoContainer : styles.active}`}
         >
-          <Image src={Icon} alt="icon" className="logo" />
-          <h2 className="title">evergreen. </h2>
+          <Image src={ReebokIcon} alt="icon" className={styles.logo} />
+          <h2 className={styles.title}>REEBOK </h2>
         </div>
         <div
-          className={
-            closeMenu === false ? "burgerContainer" : "burgerContainer active"
-          }
+          className={`${styles.burgerContainer} ${closeMenu === false ? styles.burgerContainer : styles.active }`}
         >
           <div
-            className="burgerTrigger"
+            className={styles.burgerTrigger}
             onClick={() => {
               handleCloseMenu();
             }}
           ></div>
-          <div className="burgerMenu"></div>
+          <div className={styles.burgerMenu}></div>
         </div>
         <div
-          className={
-            closeMenu === false
-              ? "contentsContainer"
-              : "contentsContainer active"
-          }
+          className={`${styles.contentsContainer} ${ closeMenu === false
+            ? styles.contentsContainer
+            : styles.active }`}
         >
           <ul>
             {menuLinks?.map((links, index) => (
+              <>
               <li key={index} 
-                // className={asPath.includes === "/" ? "active" : ""}
+                className={asPath === links?.pathname ? "menuActive" : ""}
+                onClick={() => handleActiveTab(index)}
               >
                 <Image src={links?.imageSrc} alt="dashboard" />
-                <Link href="/">{links?.menuText}</Link>
+                <Link href={links?.pathname}>{links?.menuText}</Link>
               </li>
+              
+              {/* {index === activeTab && links?.subMenu && (
+                links?.subMenu?.map((item, index) => (
+                  <li key={index} className={styles.subMenu}>
+                    <Link href={item?.pathname}>{item?.menuText}</Link>
+                  </li>
+                ))
+                  
+              )} */}
+              </>
             ))}
-            {/* <li className={location.pathname === "/" ? "active" : ""}>
-              <Image src={Dashboard} alt="dashboard" />
-              <Link to="/">dashboard</Link>
-            </li>
-            <li
-              className={location.pathname === "/transactions" ? "active" : ""}
-            >
-              <Image src={Transactions} alt="transactions" />
-              <Link to="/transactions">transactions</Link>
-            </li>
-            <li
-              className={location.pathname === "/performance" ? "active" : ""}
-            >
-              <Image src={Performance} alt="Performance" />
-              <Link to="/performance">performance</Link>
-            </li>
-            <li className={location.pathname === "/news" ? "active" : ""}>
-              <Image src={News} alt="News" />
-              <Link to="/news">news</Link>
-            </li>
-            <li className={location.pathname === "/settings" ? "active" : ""}>
-              <Image src={Settings} alt="Settings" />
-              <Link to="/settings">settings</Link>
-            </li>
-            <li className={location.pathname === "/support" ? "active" : ""}>
-              <Image src={Support} alt="Support" />
-              <Link to="/support">support</Link>
-            </li> */}
+           
           </ul>
         </div>
       </div>

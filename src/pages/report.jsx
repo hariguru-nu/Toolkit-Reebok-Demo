@@ -2,12 +2,13 @@ import React from "react";
 import Layout from "@/components/layout";
 import Table from "@/components/table";
 
-const Performance = () => {
+const News = () => {
     return (
-       <Layout>
+        <Layout>
             <Table />
-       </Layout>
+        </Layout>
+       
     );
 };
 
-export default Performance;
+export default News;
