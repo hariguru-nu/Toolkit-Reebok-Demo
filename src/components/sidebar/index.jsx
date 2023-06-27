@@ -9,9 +9,8 @@ import News from "../../assets/images/news.svg";
 import Settings from "../../assets/images/settings.svg";
 import ReebokIcon from "../../assets/images/reebok-logo.png";
 import Support from "../../assets/images/support.svg";
-import PlusIcon from "../../assets/images/plus-icon.svg";
 import styles from "./styles.module.scss";
-import Submenu from "./Submenu";
+
 
 const Sidebar = () => {
   const { asPath } = useRouter();
