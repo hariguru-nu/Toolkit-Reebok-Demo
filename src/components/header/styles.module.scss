@@ -6,11 +6,34 @@
     padding: 20px;
     border-radius: 10px;
     margin: 0 6px;
+    z-index: 1;
 }
 
 .headerIcons {
     padding: 0 20px;
     width: 24px;
     height: 24px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+}
+.card{
+    position: absolute;
+    top:50px;
+    right: 15px;
+    background-color: #1F5FA3;
+    z-index: 5;
+    border-radius: 8px;
+}
+
+.list {
+    margin: 0 auto;
+    padding: 4px;
+    list-style: none;
+}
+
+.logout {
+    text-decoration: none;
     color: #fff;
 }
