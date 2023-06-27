@@ -35,8 +35,8 @@ const Sidebar = () => {
     },
     {
       imageSrc: Transactions,
-      menuText: "Transactions",
-      pathname: "/transactions",
+      menuText: "Statistics",
+      pathname: "/statistics",
     },
     {
       imageSrc: News,
@@ -89,8 +89,8 @@ const Sidebar = () => {
     },
     {
       imageSrc: Performance,
-      menuText: "Performance",
-      pathname: "/performance",
+      menuText: "API Health Check",
+      pathname: "/apihealthcheck",
     },
   ];
 
